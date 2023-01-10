@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
   s.watchos.deployment_target = "5.0"
   s.tvos.deployment_target = "12.0"
 
-  s.source       = { :git => "https://github.com/maxgushlenko/SwiftyInsta.git" }
+  s.source       = { :git => "https://github.com/andreiYarash/SwiftInsta.git" }
   s.source_files  = "SwiftyInsta/**/*.{h,m,swift}"
 
   s.ios.frameworks = 'UIKit', 'WebKit'
