@@ -226,7 +226,7 @@ class HTTPHelper {
     }
 
     func getDefaultRequest(for url: URL, method: Method) -> URLRequest {
-        var request = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 30)
+        var request = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 15)
         request.httpMethod = method.rawValue
         request.allHTTPHeaderFields = HTTPCookie.requestHeaderFields(with: handler.response?.cookies ?? [])
         request.addValue(Constants.acceptLanguageValue, forHTTPHeaderField: Constants.acceptLanguageKey)
