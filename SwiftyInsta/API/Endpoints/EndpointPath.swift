@@ -53,9 +53,9 @@ extension EndpointPath: LosselessEndpointRepresentable {
     /// The base path.
     public var basePath: String {
         switch self {
-        case .noVersion: return "https://i.instagram.com"
-        case .version1: return "https://i.instagram.com/api/v1"
-        case .version2: return "https://i.instagram.com/api/v2"
+        case .noVersion: return "https://api.instagram.com"
+        case .version1: return "https://api.instagram.com/api/v1"
+        case .version2: return "https://api.instagram.com/api/v2"
         case .generic: return "https://www.instagram.com"
         }
     }
@@ -82,14 +82,14 @@ extension EndpointPath: RawRepresentable, ExpressibleByStringLiteral, Equatable 
     }
     /// Init with `rawValue`.
     public init?(rawValue: String) {
-        if rawValue.hasPrefix("https://i.instagram.com/api/v1") {
-            self = .version1(String(rawValue.dropFirst("https://i.instagram.com/api/v1".count)))
-        } else if rawValue.hasPrefix("https://i.instagram.com/api/v2") {
-            self = .version2(String(rawValue.dropFirst("https://i.instagram.com/api/v2".count)))
+        if rawValue.hasPrefix("https://api.instagram.com/api/v1") {
+            self = .version1(String(rawValue.dropFirst("https://api.instagram.com/api/v1".count)))
+        } else if rawValue.hasPrefix("https://api.instagram.com/api/v2") {
+            self = .version2(String(rawValue.dropFirst("https://api.instagram.com/api/v2".count)))
         } else if rawValue.hasPrefix("https://www.instagram.com") {
             self = .generic(String(rawValue.dropFirst("https://www.instagram.com".count)))
-        } else if rawValue.hasPrefix("https://i.instagram.com") {
-            self = .noVersion(String(rawValue.dropFirst("https://i.instagram.com".count)))
+        } else if rawValue.hasPrefix("https://api.instagram.com") {
+            self = .noVersion(String(rawValue.dropFirst("https://api.instagram.com".count)))
         } else {
             return nil
         }

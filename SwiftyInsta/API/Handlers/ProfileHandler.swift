@@ -159,7 +159,7 @@ public final class ProfileHandler: Handler {
                                                "biography": biography,
                                                "_uuid": handler.settings.device.deviceGuid.uuidString,
                                                "email": email]
-                                let headers = ["Host": "i.instagram.com"]
+                                let headers = ["Host": "api.instagram.com"]
 
                                 handler.requests.request(Status.self,
                                                          method: .post,
@@ -194,7 +194,7 @@ public final class ProfileHandler: Handler {
         let content = ["_csrftoken": storage.csrfToken,
                        "_uid": storage.dsUserId,
                        "_uuid": handler!.settings.device.deviceGuid.uuidString]
-        let headers = ["Host": "i.instagram.com"]
+        let headers = ["Host": "api.instagram.com"]
 
         requests.request(Status.self,
                          method: .post,
